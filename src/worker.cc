@@ -78,6 +78,11 @@ void Worker::WorkComplete() {
 
 	// std::cout << "gc - type=" << this->type << ", last_base=" << s_stats.last_base << ", heapUsage=" << this->heapUsage << std::endl;
 
+	// if not a compaction, ignore it
+	if (this->type != v8::kGCTypeMarkSweepCompact) {
+		return;
+	}
+
 	// leak detection code.  has the heap usage grown?
 	if (s_stats.last_base < this->heapUsage) {
 		if (s_stats.consecutive_growth == 0) {

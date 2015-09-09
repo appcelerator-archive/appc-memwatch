@@ -1,7 +1,7 @@
 {
   "name": "appc-memwatch",
   "description": "Keep an eye on your memory usage, and discover and isolate leaks.",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "author": "Lloyd Hilaiel (http://lloyd.io)",
   "engines": {
     "node": ">= 0.8.0"
@@ -26,7 +26,6 @@
   },
   "devDependencies": {
     "mocha": "^2.3.2",
-    "nan": "^2.0.5",
     "should": "^7.1.0"
   },
   "contributors": [
@@ -35,6 +34,7 @@
     "Justin Matthews (@jmatthewsr-ms)"
   ],
   "dependencies": {
-    "bindings": "^1.2.0"
+    "bindings": "^1.2.0",
+    "nan": "^2.0.5"
   }
 }
