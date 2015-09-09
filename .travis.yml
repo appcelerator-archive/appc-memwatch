@@ -1,17 +1,17 @@
-language: node_js
-
-node_js:
- - "0.10"
- - "0.11"
- - "0.12"
- - "iojs-v1.0"
- - "iojs-v1.1"
- - "iojs-v1.2"
- - "iojs-v1.3"
- - "iojs-v1.4"
- - "iojs-v1.5"
- - "iojs-v1.6"
- - "iojs-v1.7"
- - "iojs-v1.8"
- - "iojs-v2.0"
- - "4.0.0"
+# Change back to node_js when OSX agents have nvm pre-installed
+language: ruby
+os:
+  - linux
+  - osx
+rvm: '1.9.3'
+sudo: false
+env:
+  matrix:
+    - NODE_VERSION="0.10"
+    - NODE_VERSION="0.12"
+    - NODE_VERSION="4"
+notifications:
+  email:
+    - jhaynie@appcelerator.com
+script:
+  - ./travis.sh

@@ -11,6 +11,7 @@
     "url": "https://github.com/appcelerator/appc-memwatch.git"
   },
   "main": "include.js",
+  "license": "WTFPL",
   "licenses": [
     {
       "type": "wtfpl"

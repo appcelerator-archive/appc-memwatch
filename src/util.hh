@@ -14,6 +14,6 @@ namespace mw_util {
 
 	// given a delta in seconds, return a human redable representation
 	std::string niceDelta(int seconds);
-}
+};
 
 #endif

@@ -1,4 +1,4 @@
-appc-memwatch: Leak Detection and Heap Diffing for Node.JS
+Leak Detection and Heap Diffing for Node.JS [![Build Status](https://travis-ci.org/appcelerator/appc-memwatch.svg)](https://travis-ci.org/appcelerator/appc-memwatch)
 ============================================================
 
 	> This is a fork of memwatch which has been re-written to work with NAN 2.0 and Node 4.0+

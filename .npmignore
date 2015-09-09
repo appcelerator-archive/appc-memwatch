@@ -4,3 +4,5 @@ examples
 test.js
 *.log
 node_modules
+.travis.yml
+travis.sh

@@ -3,6 +3,8 @@
  * 2015 Changes by Jeff Haynie <jhaynie@appcelerator> / @jhaynie to bring it
  * update to snuff with Nan 2.0 and Node 4.0. Relicensed under same original license
  */
+#include <node.h>
+#include <nan.h>
 #include "memwatch.hh"
 #include "heapdiff.hh"
 
