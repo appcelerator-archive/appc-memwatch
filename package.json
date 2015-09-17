@@ -11,6 +11,7 @@
     "url": "https://github.com/appcelerator/appc-memwatch.git"
   },
   "main": "include.js",
+  "gypfile": true,
   "license": "WTFPL",
   "licenses": [
     {
@@ -21,9 +22,9 @@
     "url": "https://github.com/appcelerator/appc-memwatch/issues"
   },
   "scripts": {
-    "postinstall": "node ./build.js",
     "test": "mocha tests --reporter spec"
   },
+  "os": [ "!win32" ],
   "devDependencies": {
     "mocha": "^2.3.2",
     "should": "^7.1.0"
@@ -34,7 +35,7 @@
     "Justin Matthews (@jmatthewsr-ms)"
   ],
   "dependencies": {
-    "bindings": "^1.2.0",
-    "nan": "^2.0.5"
+    "bindings": "^1.2.1",
+    "nan": "^2.0.9"
   }
 }
