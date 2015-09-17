@@ -25,6 +25,7 @@ NAN_METHOD(gc) {
 }
 
 NAN_METHOD(upon_gc) {
+	Nan::HandleScope scope;
 	uponGCCallback = new Nan::Callback(info[0].As<Function>());
 	info.GetReturnValue().Set(Nan::Undefined());
 }
@@ -34,6 +35,7 @@ NAN_METHOD(work) {
 }
 
 NAN_GC_CALLBACK(after_gc_idle) {
+	Nan::HandleScope scope;
 	// std::cout << "after_gc_idle" << std::endl;
 	if (HeapDiff::InProgress()) { return; }
 	// schedule our work to run in a moment, once gc has fully completed.

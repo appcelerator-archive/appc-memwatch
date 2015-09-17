@@ -30,7 +30,7 @@ static time_t startTime;
 #endif
 
 
-HeapDiff::HeapDiff () : before(NULL), after(NULL), ended(false) {
+HeapDiff::HeapDiff () : ObjectWrap(), before(NULL), after(NULL), ended(false) {
 }
 
 HeapDiff::~HeapDiff () {
@@ -63,6 +63,7 @@ NAN_MODULE_INIT (HeapDiff::Init) {
 }
 
 NAN_METHOD (HeapDiff::New) {
+	Nan::HandleScope scope;
 	if (info.IsConstructCall()) {
 		HeapDiff* obj = new HeapDiff();
 		obj->Wrap(info.This());
@@ -198,6 +199,7 @@ static void manageChange(changeset & changes, const v8::HeapGraphNode * node, bo
 }
 
 NAN_METHOD (HeapDiff::End) {
+	Nan::HandleScope scope;
 	HeapDiff *t = Unwrap<HeapDiff>( info.This() );
 	// How shall we deal with double .end()ing?  The only reasonable
 	// approach seems to be an exception, cause nothing else makes
@@ -211,7 +213,6 @@ NAN_METHOD (HeapDiff::End) {
 	t->after = NanTakeHeapSnapshot;
 	inProgress = false;
 
-	Nan::HandleScope scope;
 	int s, diffBytes;
 
 	v8::Local<v8::Object> comparison = Nan::New<v8::Object>();
